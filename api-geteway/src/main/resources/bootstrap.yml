@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: api-geteway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+  redis:
+      host: 192.168.199.249
+      port: 6379
+server:
+  port: 8003
+zuul:
+  routes:
+    #myProduct:
+      #path: /myProduct/**
+      #serviceId: product
+  #简洁写法
+    product: /myProduct/**
+
+  #排除某些路由
+  ignored-patterns:
+    - /**/product/listForOrder
+  #忽略所有服务的敏感头
+  sensitive-headers:
+management:
+  endpoint:
+    env:
+      enabled: false
+#eureka客户端每次5s向，server 端发送心跳，存活状态
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5

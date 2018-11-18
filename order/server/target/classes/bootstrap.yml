@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+  zipkin:
+    base-url: http://192.168.199.249:9411/
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
+
+#    stream:
+#      bindings:
+#        input:
+#          group: order
+#          destination: mymq
+#          content-type: application/json
+#        output:
+#         destination: mymq
+
+#用配置设置超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+    #设置具体的方法超时时间
+    getlistForOrder:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+feign:
+  hystrix:
+    enabled: true
+#springboot2.0版本，actuator ,新配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+server:
+  port: 8002
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
