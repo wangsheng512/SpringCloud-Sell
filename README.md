@@ -1,5 +1,8 @@
 # SpringCloud-Sell
 Mall back office service
+技术描述：
+
+SpringBoot 2.0X
 
 Springcloud-eureka
 
