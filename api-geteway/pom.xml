@@ -7,7 +7,7 @@
 	<artifactId>api-geteway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
+	<!--ws-->
 	<name>api-geteway</name>
 	<description>Demo project for Spring Boot</description>
 
