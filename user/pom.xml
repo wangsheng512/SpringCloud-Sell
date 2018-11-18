@@ -10,7 +10,7 @@
 		<module>server</module>
 	</modules>
 	<packaging>pom</packaging>
-
+	<!--ws-->
 	<name>user</name>
 	<description>Demo project for Spring Boot</description>
 
