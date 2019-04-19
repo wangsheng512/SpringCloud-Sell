@@ -7,7 +7,7 @@ spring:
         git:
           uri: https://github.com/wangsheng512/config.git
           username: wangsheng512
-          password: sheng930106
+          password: ******
           basedir: H:/Companysourcecode/SpringCloud_Sell/config/basedir
   rabbitmq:
     host: 192.168.199.249
